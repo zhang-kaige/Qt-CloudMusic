@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include "QDebug"
 #include "QFileDialog"
-
+#include "QSplitter"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -14,8 +14,44 @@ MainWindow::MainWindow(QWidget *parent)
     player = new QMediaPlayer(this);
     player->setVolume(70);
 
+    splitter = new QSplitter(Qt::Horizontal,this);
+
     connect(ui->fileButton,&QPushButton::clicked,this,&MainWindow::openFile);
 
+    ui->leftWidget->setViewMode(QListView::ListMode);
+    ui->leftWidget->setIconSize(QSize(20,20));
+    ui->leftWidget->setSpacing(6);
+    ui->leftWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+    ui->leftWidget->setUniformItemSizes(true);
+    ui->leftWidget->setFrameShape(QFrame::NoFrame);
+
+    auto addItem = [&](const QIcon& icon, const QString& text, int pageIndex){
+        auto *it = new QListWidgetItem(icon,text);
+        it->setSizeHint(QSize(160,36));
+        it->setData(Qt::UserRole,pageIndex);
+        ui->leftWidget->addItem(it);
+    };
+
+    hp = new Homepage(this);
+    up = new UserPage(this);
+
+    int idxHp = ui->rightWidget->addWidget(hp);
+    int idxUp = ui->rightWidget->addWidget(up);
+
+    connect(ui->leftWidget, &QListWidget::currentItemChanged,this,
+            [this](QListWidgetItem* cur,QListWidgetItem*){
+            if(!cur) return;
+            ui->rightWidget->setCurrentIndex(cur->data(Qt::UserRole).toInt());
+        }
+    );
+    qDebug() << "idxHp:" << idxHp;
+    qDebug() << "idxHp:" << idxUp;
+    addItem(QIcon(":/images/ico.png"),tr("主页"),idxHp);
+    addItem(QIcon(":/images/icon.png"),tr("个人信息"),idxUp);
+
+
+
+    ui->leftWidget->setCurrentRow(0);
 }
 
 MainWindow::~MainWindow()

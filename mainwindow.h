@@ -4,6 +4,9 @@
 #include <QMainWindow>
 #include <QVideoWidget>
 #include <QMediaPlayer>
+#include <QSplitter>
+#include "homepage.h"
+#include "userpage.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -24,5 +27,9 @@ private:
     Ui::MainWindow *ui;
 
     QMediaPlayer *player = nullptr;
+    QSplitter *splitter = nullptr;
+
+    Homepage *hp = nullptr;
+    UserPage *up = nullptr;
 };
 #endif // MAINWINDOW_H

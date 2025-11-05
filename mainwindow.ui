@@ -29,32 +29,57 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
+    <widget class="QLabel" name="songLabel">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>20</y>
+       <width>67</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="fileButton">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>10</y>
+       <width>89</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>选择文件</string>
+     </property>
+    </widget>
    </widget>
-   <widget class="QPushButton" name="fileButton">
+   <widget class="QListWidget" name="leftWidget">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>160</y>
-      <width>89</width>
-      <height>25</height>
+      <x>0</x>
+      <y>0</y>
+      <width>101</width>
+      <height>351</height>
      </rect>
-    </property>
-    <property name="text">
-     <string>选择文件</string>
     </property>
    </widget>
-   <widget class="QLabel" name="songLabel">
+   <widget class="QStackedWidget" name="rightWidget">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>160</y>
-      <width>67</width>
-      <height>17</height>
+      <x>100</x>
+      <y>0</y>
+      <width>701</width>
+      <height>351</height>
      </rect>
     </property>
-    <property name="text">
-     <string>TextLabel</string>
+    <property name="currentIndex">
+     <number>0</number>
     </property>
+    <widget class="QWidget" name="page"/>
+    <widget class="QWidget" name="page_2"/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
