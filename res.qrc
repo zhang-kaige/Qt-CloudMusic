@@ -1,7 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>images/图标.png</file>
-        <file>images/图标2.png</file>
         <file>images/add.png</file>
         <file>images/bg1.jpg</file>
         <file>images/bg1.png</file>
@@ -31,5 +29,7 @@
         <file>images/traysound1.png</file>
         <file>images/traysound2.png</file>
         <file>images/traysoundless.png</file>
+        <file>images/pic.png</file>
+        <file>images/pic2.png</file>
     </qresource>
 </RCC>
