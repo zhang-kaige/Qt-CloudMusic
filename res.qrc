@@ -31,5 +31,8 @@
         <file>images/traysoundless.png</file>
         <file>images/pic.png</file>
         <file>images/pic2.png</file>
+        <file>images/播放.svg</file>
+        <file>images/爱心.svg</file>
+        <file>images/刷新.svg</file>
     </qresource>
 </RCC>

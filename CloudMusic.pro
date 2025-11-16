@@ -19,20 +19,28 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     bottombar.cpp \
     homepage.cpp \
+    iconbutton.cpp \
     main.cpp \
     mainwindow.cpp \
+    songpage.cpp \
+    songtablemodel.cpp \
     userpage.cpp
 
 HEADERS += \
     bottombar.h \
     homepage.h \
+    iconbutton.h \
     mainwindow.h \
+    song.h \
+    songpage.h \
+    songtablemodel.h \
     userpage.h
 
 FORMS += \
     bottombar.ui \
     homepage.ui \
     mainwindow.ui \
+    songpage.ui \
     userpage.ui
 
 # Default rules for deployment.

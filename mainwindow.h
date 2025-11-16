@@ -7,6 +7,7 @@
 #include <QSplitter>
 #include "homepage.h"
 #include "userpage.h"
+#include "songpage.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -31,5 +32,6 @@ private:
 
     Homepage *hp = nullptr;
     UserPage *up = nullptr;
+    songPage *sp = nullptr;
 };
 #endif // MAINWINDOW_H
