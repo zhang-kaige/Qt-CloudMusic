@@ -38,6 +38,9 @@ MainWindow::MainWindow(QWidget *parent)
     hp = new Homepage(this);
     up = new UserPage(this);
     sp = new songPage(this);
+    bb = new BottomBar(this);
+
+
 
     int idxHp = ui->rightWidget->addWidget(hp);
     int idxSp = ui->rightWidget->addWidget(sp);
@@ -73,6 +76,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->barWidget->setFixedHeight(90);
 
+    connect(sp,&songPage::playRequested,this,&MainWindow::handlePlayRequested);
+
 }
 
 MainWindow::~MainWindow()
@@ -99,5 +104,19 @@ void MainWindow::openFile()
 
    player->setMedia(QUrl::fromLocalFile(file));
    player->play();
+}
+
+void MainWindow::handlePlayRequested(const QString &filePath, const QString &lyricPath, const QString &coverPath)
+{
+    qDebug() << "播放的歌曲:" << filePath;
+    // 1. 播放音频
+    if (QFileInfo::exists(filePath)) {
+        player->setMedia(QUrl::fromLocalFile(filePath));
+        player->play();
+    } else {
+        qDebug() << "文件不存在:" << filePath;
+    }
+
+
 }
 

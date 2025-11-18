@@ -20,7 +20,7 @@ public:
     QVariant data(const QModelIndex& index, int role) const override;
     QVariant headerData(int section, Qt::Orientation orient, int role) const override;
 
-    Qt::Qt::ItemFlags flags(const QModelIndex &index) const override;
+    Qt::ItemFlags flags(const QModelIndex &index) const override;
 
     const Song& songAt(int row) const;
     void setSongs(QVector<Song> songs);

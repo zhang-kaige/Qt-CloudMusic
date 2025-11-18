@@ -8,6 +8,7 @@
 #include "homepage.h"
 #include "userpage.h"
 #include "songpage.h"
+#include "bottombar.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -23,6 +24,11 @@ public:
 
     void openFile();
 
+private slots:
+    void handlePlayRequested(const QString &filePath,
+                             const QString &lyricPath,
+                             const QString &coverPath);
+
 
 private:
     Ui::MainWindow *ui;
@@ -33,5 +39,6 @@ private:
     Homepage *hp = nullptr;
     UserPage *up = nullptr;
     songPage *sp = nullptr;
+    BottomBar *bb = nullptr;
 };
 #endif // MAINWINDOW_H

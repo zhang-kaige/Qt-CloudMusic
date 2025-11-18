@@ -15,6 +15,11 @@ public:
     explicit songPage(QWidget *parent = nullptr);
     ~songPage();
 
+signals:
+    void playRequested(const QString &filePath,
+                       const QString &lyricPath,
+                       const QString &coverPath);
+
 private:
     Ui::songPage *ui;
 };

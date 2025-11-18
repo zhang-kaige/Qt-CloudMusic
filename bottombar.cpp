@@ -9,8 +9,8 @@ BottomBar::BottomBar(QWidget *parent) :
     auto pb = ui->pauseBtn;
     ui->nextBtn->setIcon(QIcon(":/images/traynext.png"));
     ui->lastBtn->setIcon(QIcon(":/images/traylast.png"));
-    ui->loveBtn->setIcon(QIcon(":/images/爱心.svg"));
-    ui->styleBtn->setIcon(QIcon(":/images/刷新.svg"));
+    ui->loveBtn->setIcon(QIcon(":/images/love.svg"));
+    ui->styleBtn->setIcon(QIcon(":/images/flash.svg"));
     // 1) 基本属性
     pb->setObjectName("pb");                         // 若用 #pb 选择器必须有
     pb->setToolButtonStyle(Qt::ToolButtonIconOnly);
@@ -20,7 +20,7 @@ BottomBar::BottomBar(QWidget *parent) :
     pb->setCheckable(true);                          // 需要 :checked 才生效
 
     // 2) 图标与尺寸
-    pb->setIcon(QIcon(":/images/播放.svg"));    // PNG 就用白色素材，或改用 SVG+currentColor
+    pb->setIcon(QIcon(":/images/action.svg"));    // PNG 就用白色素材，或改用 SVG+currentColor
     pb->setIconSize(QSize(22,22));                   // 按需
 
     // 3) 样式表
