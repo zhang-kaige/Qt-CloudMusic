@@ -28,7 +28,7 @@ songPage::songPage(QWidget *parent) :
         QDate(2007,11,2),
         "D:/Project/Qt/Resource/Music/青花瓷.mp3",
         "D:/Project/Qt/Resource/songText/青花瓷-周杰伦-歌词.lrc",
-        "D:/Project/Qt/Resource/Pic/青花瓷.jpg"
+        "D:/Project/Qt/Resource/Pic/青花瓷.png"
     });
 
 

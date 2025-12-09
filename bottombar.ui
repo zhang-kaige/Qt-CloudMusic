@@ -17,7 +17,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QLabel" name="label_3">
+      <widget class="RotateLabel" name="coverLab">
        <property name="text">
         <string>123123333</string>
        </property>
@@ -26,11 +26,22 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="songLab">
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="songerLab">
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
         <widget class="QLabel" name="label_5">
@@ -215,6 +226,11 @@
    <class>IconButton</class>
    <extends>QToolButton</extends>
    <header>iconbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>RotateLabel</class>
+   <extends>QLabel</extends>
+   <header>rotatelabel.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

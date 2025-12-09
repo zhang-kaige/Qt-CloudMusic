@@ -31,6 +31,7 @@ HEADERS += \
     homepage.h \
     iconbutton.h \
     mainwindow.h \
+    rotatelabel.h \
     song.h \
     songpage.h \
     songtablemodel.h \

@@ -77,7 +77,7 @@ QPixmap BottomBar::makeRoundPixmap(const QPixmap &src, int size)
 {
     QPixmap scaled = src.scaled(size, size, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
     QPixmap result(size, size);
-    result.fill(Qt::transparent);
+    result.fill(Qt::transparent);   
 
     QPainter p(&result);
     p.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);

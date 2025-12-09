@@ -38,7 +38,7 @@ MainWindow::MainWindow(QWidget *parent)
     hp = new Homepage(this);
     up = new UserPage(this);
     sp = new songPage(this);
-    bb = new BottomBar(this);
+//    bb = new BottomBar(this);
 
 
 
@@ -113,10 +113,16 @@ void MainWindow::handlePlayRequested(const QString &filePath, const QString &lyr
     if (QFileInfo::exists(filePath)) {
         player->setMedia(QUrl::fromLocalFile(filePath));
         player->play();
+        ui->barWidget->startCoverRotate();
     } else {
         qDebug() << "文件不存在:" << filePath;
     }
 
+    // 从文件名获取歌名（如果还没有 Song 类）
+    QFileInfo fi(filePath);
+    QString title = fi.completeBaseName();
+    QString artist; // 你后面做 Song 后会有真正的歌手
 
+    // ⭐⭐ 关键点：更新底部栏
+    ui->barWidget->setSongInfo(title, artist, coverPath);
 }
-
